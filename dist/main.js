@@ -222,4 +222,144 @@
                 });
             });
         }
+
+        // Freilab Easter Egg
+        initFreilabEasterEgg(shadowRoot);
+
+        function initFreilabEasterEgg(shadowRoot) {
+            const freilab = shadowRoot.getElementById('freilab');
+            if (!freilab) return;
+
+            let clickCount = 0;
+            let clickTimeout;
+
+            freilab.addEventListener('click', (e) => {
+                clickCount++;
+
+                // Reset click count after 3 seconds of no clicks
+                clearTimeout(clickTimeout);
+                clickTimeout = setTimeout(() => {
+                    clickCount = 0;
+                }, 3000);
+
+                // Activate on 7th click
+                if (clickCount === 7) {
+                    freilab.classList.add('blinking');
+                    startRainbowCircles(shadowRoot, freilab);
+                    clickCount = 0;
+                }
+            });
+        }
+
+        function startRainbowCircles(shadowRoot, freilab) {
+            const svg = shadowRoot.getElementById('map-svg');
+            if (!svg) return;
+
+            const circles = Array.from(svg.querySelectorAll('circle'));
+            const activeCircles = [];
+
+            function getRandomRainbowColor() {
+                const colors = [
+                    '#F44336', // Material Red
+                    '#E91E63', // Material Pink
+                    '#9C27B0', // Material Purple
+                    '#673AB7', // Material Deep Purple
+                    '#3F51B5', // Material Indigo
+                    '#2196F3', // Material Blue
+                    '#00BCD4', // Material Cyan
+                    '#009688', // Material Teal
+                    '#4CAF50', // Material Green
+                    '#8BC34A', // Material Light Green
+                    '#FFEB3B', // Material Yellow
+                    '#FF9800', // Material Orange
+                    '#FF5722'  // Material Deep Orange
+                ];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+
+            function updateActiveCircles() {
+                activeCircles.forEach(circle => {
+                    circle.style.fill = getRandomRainbowColor();
+                });
+            }
+
+            // Add one circle to the cycle every 150ms
+            let circleIndex = 0;
+            const addCircleInterval = setInterval(() => {
+                if (circleIndex < circles.length) {
+                    const circle = circles[circleIndex];
+                    activeCircles.push(circle);
+                    circle.style.fill = getRandomRainbowColor();
+                    circleIndex++;
+                } else {
+                    clearInterval(addCircleInterval);
+                    // All circles added - now activate freilab and start hearts
+                    freilab.classList.remove('blinking');
+                    freilab.classList.add('activated');
+                    const rect = freilab.getBoundingClientRect();
+                    startHeartBursts(rect, shadowRoot);
+                }
+            }, 150);
+
+            // Update colors of active circles every 500ms
+            setInterval(updateActiveCircles, 500);
+        }
+
+        function startHeartBursts(initialRect, shadowRoot) {
+            // Create container for hearts in the shadow DOM
+            let container = shadowRoot.querySelector('.heart-container');
+            if (!container) {
+                container = document.createElement('div');
+                container.className = 'heart-container';
+                container.style.cssText = 'position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10000;';
+                shadowRoot.appendChild(container);
+            }
+
+            function createBurst() {
+                // Get current position of freilab (in case of scroll)
+                const freilab = shadowRoot.getElementById('freilab');
+                const rect = freilab ? freilab.getBoundingClientRect() : initialRect;
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                // Random burst size between 5-15 hearts
+                const burstSize = 5 + Math.floor(Math.random() * 11);
+
+                for (let i = 0; i < burstSize; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.className = 'heart-particle';
+                        heart.textContent = '❤️';
+
+                        // Random direction and distance
+                        const angle = (Math.random() * 360) * (Math.PI / 180);
+                        const distance = 100 + Math.random() * 200;
+                        const tx = Math.cos(angle) * distance;
+                        const ty = Math.sin(angle) * distance - 100; // Bias upward
+                        const rot = (Math.random() - 0.5) * 720;
+
+                        heart.style.cssText = `
+                            left: ${centerX}px;
+                            top: ${centerY}px;
+                            --tx: ${tx}px;
+                            --ty: ${ty}px;
+                            --rot: ${rot}deg;
+                            font-size: ${15 + Math.random() * 15}px;
+                        `;
+
+                        container.appendChild(heart);
+
+                        // Remove heart after animation
+                        setTimeout(() => heart.remove(), 2000);
+                    }, i * 30);
+                }
+
+                // Schedule next burst with random interval (800-2000ms)
+                const nextBurstDelay = 800 + Math.random() * 1200;
+                setTimeout(createBurst, nextBurstDelay);
+            }
+
+            // Start the first burst immediately
+            createBurst();
+        }
     })();
