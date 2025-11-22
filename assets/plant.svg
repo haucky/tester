@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="63.462196mm"
+   height="87.431725mm"
+   viewBox="0 0 63.462196 87.431725"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="63.462196"
+       height="87.431725"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-12.49305,-7.8276576)">
+    <path
+       class="st45"
+       d="m 69.637961,95.157894 h -53.07541 c 0,0 -12.0120898,-41.91 5.23875,-41.91 7.46125,0 12.27666,14.36687 12.27666,14.36687 0,0 -2.77812,-63.2618712 22.225,-59.6370802 34.23709,4.9741702 13.335,87.1802102 13.335,87.1802102 z"
+       id="path1316"
+       style="fill:#3b9134;stroke-width:0.264583" />
+    <g
+       id="g1317"
+       transform="matrix(0.26458333,0,0,0.26458333,-171.97953,-1233.1827)">
+      <line
+         class="st6"
+         x1="834.5"
+         y1="5020.5"
+         x2="861.79999"
+         y2="4777.8999"
+         id="line1316"
+         style="fill:none;stroke:#f5ce44;stroke-width:4px;stroke-miterlimit:10" />
+      <line
+         class="st6"
+         x1="732.40002"
+         y1="4899.2002"
+         x2="756.09998"
+         y2="5020.5"
+         id="line1317"
+         style="fill:none;stroke:#f5ce44;stroke-width:4px;stroke-miterlimit:10" />
+      <polyline
+         class="st6"
+         points="885.5 4855.5 848.2 4909.7 816.9 4814.4"
+         id="polyline1317"
+         style="fill:none;stroke:#f5ce44;stroke-width:4px;stroke-miterlimit:10" />
+    </g>
+  </g>
+</svg>

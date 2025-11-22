@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="72.575211mm"
+   height="60.801239mm"
+   viewBox="0 0 72.575211 60.801239"
+   version="1.1"
+   id="svg1"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="72.575211"
+       height="60.801239"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-119.59167,-61.118752)">
+    <g
+       id="g802"
+       transform="matrix(0.26458333,0,0,0.26458333,-66.807283,-439.47292)">
+      <g
+         id="g801">
+        <circle
+           class="st42"
+           cx="806.79999"
+           cy="1994.3"
+           r="102.3"
+           id="circle800"
+           style="fill:#f5ce44" />
+        <path
+           class="st20"
+           d="m 881.2,2066.4 c -40.6,30.8 -98.4,22.8 -129.2,-17.7 -24.6,-32.5 -18.3,-78.7 14.2,-103.3 26,-19.7 63,-14.6 82.7,11.3 15.8,20.8 11.7,50.4 -9.1,66.1 -16.6,12.6 -40.3,9.4 -52.9,-7.3 -10.1,-13.3 -7.5,-32.2 5.8,-42.3 10.6,-8.1 25.8,-6 33.9,4.6 6.5,8.5 4.8,20.6 -3.7,27.1 -6.8,5.2 -16.5,3.8 -21.7,-3 -4.1,-5.4 -3.1,-13.2 2.4,-17.3"
+           id="path800"
+           style="fill:none;stroke:#3b9134;stroke-width:3px;stroke-miterlimit:10" />
+      </g>
+      <polygon
+         class="st45"
+         points="948.8,2041.8 922.9,2085 922.1,2027.2 887.7,2025.5 892.6,2086.5 871.5,2049.2 839.4,2065.5 871.3,2120.2 944.6,2121.8 978.8,2067 "
+         id="polygon801"
+         style="fill:#3b9134" />
+    </g>
+  </g>
+</svg>

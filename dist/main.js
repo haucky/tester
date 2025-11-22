@@ -223,6 +223,40 @@
             });
         }
 
+        // FAQ accordion behavior - only one category and one item open at a time
+        initFaqAccordion(shadowRoot);
+
+        function initFaqAccordion(shadowRoot) {
+            const faqCategories = shadowRoot.querySelectorAll('.faq-category');
+            const faqItems = shadowRoot.querySelectorAll('.faq-item');
+
+            // Close other categories when one is opened
+            faqCategories.forEach(category => {
+                category.addEventListener('toggle', () => {
+                    if (category.open) {
+                        faqCategories.forEach(other => {
+                            if (other !== category && other.open) {
+                                other.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Close other items when one is opened
+            faqItems.forEach(item => {
+                item.addEventListener('toggle', () => {
+                    if (item.open) {
+                        faqItems.forEach(other => {
+                            if (other !== item && other.open) {
+                                other.open = false;
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
         // Freilab Easter Egg
         initFreilabEasterEgg(shadowRoot);
 
