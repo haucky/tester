@@ -263,7 +263,7 @@
         initFreilabEasterEgg(shadowRoot);
 
         function initFreilabEasterEgg(shadowRoot) {
-            const freilab = shadowRoot.getElementById('freilab');
+            const freilab = shadowRoot.querySelector('.freilab');
             if (!freilab) return;
 
             let clickCount = 0;
@@ -353,7 +353,7 @@
 
             function createBurst() {
                 // Get current position of freilab (in case of scroll)
-                const freilab = shadowRoot.getElementById('freilab');
+                const freilab = shadowRoot.querySelector('.freilab');
                 const rect = freilab ? freilab.getBoundingClientRect() : initialRect;
                 const centerX = rect.left + rect.width / 2;
                 const centerY = rect.top + rect.height / 2;
