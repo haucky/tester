@@ -90,8 +90,9 @@
         }
 
         function updateButtons() {
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex === items.length - 1;
+            // For infinite carousel, buttons are never disabled
+            prevBtn.disabled = false;
+            nextBtn.disabled = false;
         }
 
         function scrollToIndex(index) {
@@ -106,15 +107,15 @@
         }
 
         prevBtn.addEventListener("click", () => {
-            if (currentIndex > 0) {
-                scrollToIndex(currentIndex - 1);
-            }
+            // Infinite loop: go to last item when at first
+            const newIndex = currentIndex > 0 ? currentIndex - 1 : items.length - 1;
+            scrollToIndex(newIndex);
         });
 
         nextBtn.addEventListener("click", () => {
-            if (currentIndex < items.length - 1) {
-                scrollToIndex(currentIndex + 1);
-            }
+            // Infinite loop: go to first item when at last
+            const newIndex = currentIndex < items.length - 1 ? currentIndex + 1 : 0;
+            scrollToIndex(newIndex);
         });
 
         // Update current index on scroll
@@ -167,8 +168,9 @@
         }
 
         function updateTeamButtons() {
-            teamPrevBtn.disabled = teamCurrentIndex === 0;
-            teamNextBtn.disabled = teamCurrentIndex === teamItems.length - 1;
+            // For infinite carousel, buttons are never disabled
+            teamPrevBtn.disabled = false;
+            teamNextBtn.disabled = false;
         }
 
         function teamScrollToIndex(index) {
@@ -183,15 +185,15 @@
         }
 
         teamPrevBtn.addEventListener("click", () => {
-            if (teamCurrentIndex > 0) {
-                teamScrollToIndex(teamCurrentIndex - 1);
-            }
+            // Infinite loop: go to last item when at first
+            const newIndex = teamCurrentIndex > 0 ? teamCurrentIndex - 1 : teamItems.length - 1;
+            teamScrollToIndex(newIndex);
         });
 
         teamNextBtn.addEventListener("click", () => {
-            if (teamCurrentIndex < teamItems.length - 1) {
-                teamScrollToIndex(teamCurrentIndex + 1);
-            }
+            // Infinite loop: go to first item when at last
+            const newIndex = teamCurrentIndex < teamItems.length - 1 ? teamCurrentIndex + 1 : 0;
+            teamScrollToIndex(newIndex);
         });
 
         // Update current index on scroll
